@@ -1,7 +1,7 @@
 #####################################################
 ## ARGUMENTS
 
-NAME		= libft.a
+NAME		= ban #libft.a
 HEADER		= libft.h
 CFLAGS		= -Wall -Wextra -Werror
 CC			= cc
@@ -9,7 +9,7 @@ CC			= cc
 #####################################################
 ## SOURCES
 
-SRC_FILES	= ft_isalpha.c
+SRC_FILES	= ft_isalpha.c main.c
 OBJ_FILES	= ${SRC_FILES:.c=.o}
 
 #####################################################
@@ -17,17 +17,17 @@ OBJ_FILES	= ${SRC_FILES:.c=.o}
 
 all: ${NAME} 
 
-# ${NAME}: ${OBJ_FILES}
-#	${CC} ${OBJ_FILES} -o ${NAME}
+ ${NAME}: ${OBJ_FILES}
+	${CC} ${OBJ_FILES} -o ${NAME}
 
 #%.o: %.c
 #	${CC} ${CFLAGS} -c $< -o $@
 #
-${NAME}: ${OBJ_FILES}
-	ar -rcs ${NAME} ${OBJ_FILES}
+#${NAME}: ${OBJ_FILES}
+#	ar -rcs ${NAME} ${OBJ_FILES}
 
 %.o: %.c ${HEADER}
-	${cc} -c ${CFLAGS} $<
+	${CC} -c ${CFLAGS} $<
 
 clean:
 	rm -rf ${OBJ_FILES}
