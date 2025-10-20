@@ -32,7 +32,7 @@ OBJ_FILES_BONUS			= ${SRC_FILES_BONUS:.c=.o}
 
 all: ${NAME} 
 
-#-----------------------------Create a.out-------------
+#-----------------------------Create a.out--------------
 ${NAME}: ${OBJ_FILES}
 	@echo -n "Create file ${NAME} en process..."
 	@${CC} ${OBJ_FILES} -o ${NAME}
