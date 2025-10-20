@@ -9,7 +9,7 @@ void	show_isascii(char *s);
 void	show_isprint(char *s);
 void	show_tolower(char *s);
 void	show_toupper(char *s);
-size_t	ft_strlen(const char *s);
+void	show_strlen(char *s);
 
 int	main(int argc, char *argv[])
 {
@@ -22,6 +22,7 @@ int	main(int argc, char *argv[])
 		show_isprint(argv[1]);
 		show_tolower(argv[1]);
 		show_toupper(argv[1]);
+		show_strlen(argv[1]);
 	}
 	return (0);
 }
@@ -39,6 +40,11 @@ int	ft_ataoi(char *s)
 		i++;
 	}
 	return (res * 1);
+}
+
+void	show_strlen(char *s)
+{
+	printf("The lenght of string is: %ld\n", ft_strlen(s));
 }
 
 void	show_alpha(char *s)
@@ -98,7 +104,7 @@ void	show_toupper(char *s)
 
 	c = ft_toupper(ft_ataoi(s));
 	if (ft_toupper(ft_ataoi(s)))
-		printf("True is lower case %c\n", c);
+		printf("True is Uppercase %c\n", c);
 	else
-		printf("Is not lower case\n");
+		printf("Is not Uppercase\n");
 }
