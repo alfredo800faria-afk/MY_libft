@@ -12,5 +12,6 @@ int	ft_isprint(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 size_t	ft_strlen(const char *s);
+int	ft_atoi(const char *nptr);
 
 #endif
