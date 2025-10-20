@@ -9,6 +9,7 @@ void	show_isascii(char *s);
 void	show_isprint(char *s);
 void	show_tolower(char *s);
 void	show_toupper(char *s);
+size_t	ft_strlen(const char *s);
 
 int	main(int argc, char *argv[])
 {
