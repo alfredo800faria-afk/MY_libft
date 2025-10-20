@@ -1,6 +1,30 @@
 #include "libft.h"
 #include <stdio.h>
 
+int	ft_ataoi(char *s);
+void	show_alpha(char *s);
+void	show_isdigit(char *s);
+void	show_isalnum(char *s);
+void	show_isascii(char *s);
+void	show_isprint(char *s);
+void	show_tolower(char *s);
+void	show_toupper(char *s);
+
+int	main(int argc, char *argv[])
+{
+	if (argc == 2)
+	{
+		show_alpha(argv[1]);
+		show_isdigit(argv[1]);
+		show_isalnum(argv[1]);
+		show_isascii(argv[1]);
+		show_isprint(argv[1]);
+		show_tolower(argv[1]);
+		show_toupper(argv[1]);
+	}
+	return (0);
+}
+
 int	ft_ataoi(char *s)
 {
 	int	i;
@@ -76,19 +100,4 @@ void	show_toupper(char *s)
 		printf("True is lower case %c\n", c);
 	else
 		printf("Is not lower case\n");
-}
-
-int	main(int argc, char *argv[])
-{
-	if (argc == 2)
-	{
-		show_alpha(argv[1]);
-		show_isdigit(argv[1]);
-		show_isalnum(argv[1]);
-		show_isascii(argv[1]);
-		show_isprint(argv[1]);
-		show_tolower(argv[1]);
-		show_toupper(argv[1]);
-	}
-	return (0);
 }
