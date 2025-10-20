@@ -22,6 +22,7 @@ GDB						= -g3
 
 SRC_FILES				= main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 						  ft_isascii.c ft_isprint.c ft_tolower.c ft_toupper.c \
+						  ft_strlen.c
 #SRC_FILES_BONUS		= 
 OBJ_FILES				= ${SRC_FILES:.c=.o}
 OBJ_FILES_BONUS			= ${SRC_FILES_BONUS:.c=.o}
