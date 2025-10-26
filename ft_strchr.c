@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:12:12 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:12:14 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/10/26 18:06:24 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,30 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
+	char	ch;
 
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i])
+	ch = (char)c;
+	while (*str != '\0')
 	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
-		i++;
+		if (*str == ch)
+			return ((char *)str);
+		str++;
 	}
-	if (c == '\0')
-		return ((char *)&str[i]);
-	else
-		return (NULL);
-	return (0);
+	if (ch == '\0')
+		return ((char *)str);
+	return (NULL);
 }
 /*
 #include <stdio.h>
+
 int main()
 {
-	char str[] = "Hello World";
-	char char_a = 'o';
-	char char_b = 'c';
+    char *str = "Hello, Marvin!";
 
-	printf("Search for character '%c' in string '%s'\n", char_a, str);
-	printf("Output: '%s'\n", ft_strchr(str, char_a));
-
-	printf("Search for character '%c' in string '%s'\n", char_b, str);
-	printf("Output: '%s'\n", ft_strchr(str, char_b));
+    printf("%s\n", ft_strchr(str, 'o'));     // "o, Marvin!"
+    printf("%s\n", ft_strchr(str, 'z'));     // (null)
+    printf("%s\n", ft_strchr(str, '\0'));    // "" End string
+    printf("%s\n", ft_strchr(str, 'H'));     // "Hello, Marvin!"
+    return 0;
 }
 */
