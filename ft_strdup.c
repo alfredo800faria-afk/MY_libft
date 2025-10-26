@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 15:13:32 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:13:34 by srusso-b         ###   ########.fr       */
+/*   Created: 2025/10/26 11:27:10 by srusso-b          #+#    #+#             */
+/*   Updated: 2025/10/26 12:09:24 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Linux man page: The strlen() function calculates the length of the 
- * string s, excluding the terminating null byte */
+/*	The strdup() function returns a pointer to a new string which is a
+    duplicate of the string s.  Memory for the new string is obtained
+    with malloc(3), and can be freed with free(3). */
 
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s)
 {
+	char	*dup;
 	size_t	i;
+	size_t	size;
 
+	if (s == NULL)
+		return (NULL);
+	size = ft_strlen(s);
+	dup = (char *)malloc(sizeof(char) * (size + 1));
+	if (!dup)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
+	{
+		dup[i] = s[i];
 		i++;
-	return (i);
+	}
+	dup[i] = '\0';
+	return (dup);
 }
