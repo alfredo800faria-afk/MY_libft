@@ -35,7 +35,6 @@ CFLAGS 				= -Wall -Wextra -Werror
 HEADER				= libft.h
 
 
-
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
