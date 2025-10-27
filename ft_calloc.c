@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:58:14 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:06:30 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:40:52 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	total;
 	void	*ptr;
 
-	total = nmemb * size;
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
+	total = nmemb * size;
 	if (nmemb != total / size)
 		return (NULL);
 	ptr = malloc(total);
