@@ -6,7 +6,7 @@
 #    By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 14:19:42 by srusso-b          #+#    #+#              #
-#    Updated: 2025/10/25 15:48:02 by srusso-b         ###   ########.fr        #
+#    Updated: 2025/10/27 19:42:27 by srusso-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,11 @@ NAME				= libft.a
 #						ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
 SOURCES				= $(wildcard *.c)
 
-#SOURCES_BONUS		=
+SOURCES_BONUS		= $(wildcard *.c)
 
 OBJECTS 			= $(SOURCES:.c=.o)
 
-#OBJECTS_BONUS 		= $(OBJECTS_BONUS:.c=.o)
+OBJECTS_BONUS 		= $(SOURCES_BONUS:.c=.o)
 
 CC 					= gcc
 
@@ -43,6 +43,9 @@ $(NAME): $(OBJECTS)
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(OBJECTS) $(OBJECTS_BONUS)
+	ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+
 clean:
 	rm -rf $(OBJECTS) $(OBJECTS_BONUS)
 
@@ -51,4 +54,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
