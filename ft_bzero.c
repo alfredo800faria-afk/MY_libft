@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:05:15 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:05:26 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/10/29 05:16:36 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "Hello World";
-	unsigned long num = 6;
-
-	printf("String: %s \n Filling %lu spots with NULL '0' \n", str, num);
-	ft_bzero(str, num);
-	printf("Ouput: %s", str);
-	return (0);
-}
-*/

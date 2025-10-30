@@ -6,103 +6,83 @@
 /*   By: srusso-b <srusso-b@student.42lis.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:02:01 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/27 16:04:32 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/10/29 03:52:36 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free(char **arr)
+void	free_array(char **arr, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	while (i > 0)
-	{
-		free(arr[(i--) - 1]);
-	}
+	while (len--)
+		free(arr[len]);
 	free(arr);
 }
 
 size_t	count_words(char const *s, char c)
 {
-	size_t	i;
-	size_t	words;
+	size_t	count;
+	size_t	in_word;
 
-	words = 0;
-	i = 0;
-	while (s[i] != '\0')
+	in_word = 0;
+	count = 0;
+	while (*s != '\0')
 	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i])
-			words++;
-		while (s[i] != c && s[i])
-			i++;
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
-	return (words);
+	return (count);
 }
 
-char	*create_arr(char const *s, char c, int *x)
+char	*extract_word(const char **s, char c)
 {
-	size_t	i;
-	size_t	len;
-	size_t	start;
-	char	*word;
+	size_t		len;
+	const char	*start;
+	char		*word;
 
-	while (s[*x] && s[*x] == c)
-		(*x)++;
-	start = *x;
-	len = 0;
-	while (s[*x + len] && s[*x + len] != c)
-		len++;
-	word = malloc(sizeof(char) * len + 1);
+	while (**s == c)
+		(*s)++;
+	start = *s;
+	while (**s && **s != c)
+		(*s)++;
+	len = *s - start;
+	word = (char *)malloc(sizeof(char) * len + 1);
 	if (!word)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		word[i] = s[i + start];
-		i++;
-	}
+	ft_memcpy(word, start, len);
 	word[len] = '\0';
-	*x += len;
 	return (word);
-}
-
-void	add_to_arr(char **arr, char const *word, char c, size_t count)
-{
-	size_t	i;
-	int		x;
-
-	x = 0;
-	i = 0;
-	while (i < count)
-	{
-		arr[i] = create_arr(word, c, &x);
-		if (!arr[i])
-		{
-			ft_free(arr);
-			return ;
-		}
-		i++;
-	}
-	arr[i] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
+	char	**result;
 	size_t	words;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	arr = malloc(sizeof(char *) * (words + 1));
-	if (!arr)
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
 		return (NULL);
-	add_to_arr(arr, s, c, words);
-	return (arr);
+	i = 0;
+	while (i < words)
+	{
+		result[i] = extract_word(&s, c);
+		if (!result)
+		{
+			free_array(result, i);
+			return (NULL);
+		}
+		i++;
+	}
+	result[i] = NULL;
+	return (result);
 }
