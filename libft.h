@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:23:58 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/30 06:58:36 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 17:58:54 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <string.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdint.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lis.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:09:54 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/27 17:31:43 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 16:44:25 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,17 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+/*
+int main(void)
+{
+    char c;
+	printf("Type something on terminal to test fd\n");
+    while (read(0, &c, 1) == 1)  // Keep reading until EOF (Ctrl+D)
+    {
+        ft_putchar_fd(c, 1);     // Echo every char
+        if (c == '\n')
+            break;               // Optional: stop on Enter
+    }
+    return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:10:16 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:10:21 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 19:43:42 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,22 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	char str[] = "Hello World";
-	char ch_a = 'o';
-	char ch_b = 'c';
-	int i = 5;
+	const char s[] = "Marvin Paranoid!";;
 
-	printf("Search for character '%c'\n", ch_a);
-	printf("in the first %d\n", i);
-	printf("characters of the string '%s'\n", str);
-	printf("Output: '%p'\n\n", ft_memchr(str, ch_a, i));
+	printf("ft_memchr: %s\n", (char *)ft_memchr(s, 'i', 5));
+	printf("memchr: %s\n\n", (char *)memchr(s, 'i', 5));
 
-	printf("Search for character '%c'\n", ch_b);
-	printf("in the first %d\n", i);
-	printf("characters of the string '%s'\n", str);
-	printf("Output: '%p'\n", ft_memchr(str, ch_b, i));
+	printf("ft_memchr: %s\n", (char *)ft_memchr(s, 'P', 10));
+	printf("memchr: %s\n\n", (char *)memchr(s, 'P', 10));
+
+	printf("ft_memchr: %s\n", (char *)ft_memchr(s, 'r', 3));
+	printf("memchr: %s\n\n", (char *)memchr(s, 'r', 3));
+
+	printf("ft_memchr: %s\n", (char *)ft_memchr(s, 101, 2));
+	printf("memchr: %s\n", (char *)memchr(s, 101, 2));
+
+	return (0);
 }
 */

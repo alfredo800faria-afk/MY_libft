@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:04:10 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/30 20:00:33 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 15:38:02 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,10 @@
 /*Linux man page: The atoi() function converts the initial portion of the
  * string pointed to by nptr to int. */
 
-static int	check_overflow(long result, int sign)
-{
-	if (sign == 1 && result > 2147483647)
-		return (2147483647);
-	if (sign == -1 && result < -2147483648)
-		return (-2147483648);
-	return (result);
-}
-
 int	ft_atoi(const char *nptr)
 {
-	long	result;
-	int		sign;
+	int	result;
+	int	sign;
 
 	result = 0;
 	sign = 1;
@@ -42,8 +33,31 @@ int	ft_atoi(const char *nptr)
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		result = result * 10 + (*nptr - '0');
-		result = check_overflow(result, sign);
 		nptr++;
 	}
-	return ((int)(result * sign));
+	return (result * sign);
 }
+/*
+int main(void)
+{
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f -2147483648"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f -2147483648"));
+
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f 2147483647"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f 2147483647"));
+
+	printf("ft_atoi: %d\n", ft_atoi(""));
+	printf("atoi: %d\n\n", atoi(""));
+
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f-+42"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f-+42"));
+
+	printf("ft_atoi: %d\n", ft_atoi("   \t\r\n\v\f-42 24f"));
+	printf("atoi: %d\n\n", atoi("   \t\r\n\v\f-42 24f"));
+
+	printf("ft_atoi: %d\n", ft_atoi("   \t42"));
+	printf("atoi: %d\n\n", atoi("   \t42"));
+
+    return (0);
+}
+*/

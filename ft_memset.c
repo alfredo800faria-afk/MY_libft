@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:11:51 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:11:54 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 16:34:22 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,20 @@ void	*ft_memset(void *str, int c, size_t n)
 	return (str);
 }
 /*
-#include <stdio.h>
-int main()
+int main(void)
 {
-	char str1[] = "Hello World";
-	char carac1 = 'A';
-	unsigned long num1 = 6;
+//	I can make **pointer this array of pointers, not a block of memory you can write to.
 
-	printf("String: %s \n", str1);
-	printf("Filling %lu spots\n", num1);
-	printf("with character '%c' \n",carac1);
-	ft_memset(str1, carac1, num1);
-	printf("Output: %s", str1);
+	char str[] = "Marvin Paranoid";
+	char s[] = "Hello Marvin";
+	char ch = 'U';
+	unsigned int len = ft_strlen(str) + 1;
+
+	ft_memset(str, ch, len);
+	printf("ft_memset: %s \n", str);
+ 	printf("Filling with %c spots in string: %s\n", ch, (char *)ft_memset(s + 5, ch, 3));
+	for(len = 0; len < ft_strlen(s); len++)
+		;
+	printf("All string: %s\n", s);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:25:51 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:43:20 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 19:01:38 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(join, s2, size + 1);
 	return (join);
 }
+/*
+int	main(void)
+{
+	char	*s;
+	char	s1[] = "Android Paranoid!";
+
+	s = ft_strjoin("Marvin ", s1);
+	printf("String join: %s\n", s);
+	free(s);
+	s = ft_strjoin("", s1);
+	printf("String2 join: %s\n", s);
+	free(s);
+	s = ft_strjoin("Give null", NULL);
+	printf("String3 join: %s\n", s);
+	free(s);
+
+	return (0);
+}
+*/

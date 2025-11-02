@@ -6,7 +6,7 @@
 #    By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 14:19:42 by srusso-b          #+#    #+#              #
-#    Updated: 2025/10/30 02:44:59 by srusso-b         ###   ########.fr        #
+#    Updated: 2025/11/01 16:01:58 by srusso-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,15 +46,15 @@ $(NAME): $(OBJECTS)
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(NAME) $(OBJECTS_BONUS)
+bonus: $(OBJECTS) $(OBJECTS_BONUS)
 	@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
 	@echo "Compilation BONUS complete!"
 
 clean:
 	@rm -rf $(OBJECTS) $(OBJECTS_BONUS)
-	@echo "Libft cleaning!"
+	@echo "Libft cleaning object files!"
 
-fclean: clean
+fclean: clean 
 	@rm -rf $(NAME)
 	@echo "Libft Deleted!"
 

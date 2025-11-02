@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:58:14 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/27 11:40:52 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:50:19 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,70 +17,34 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	total;
 	void	*ptr;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
-	total = nmemb * size;
-	if (nmemb != total / size)
+	if (nmemb > SIZE_MAX / size)
 		return (NULL);
-	ptr = malloc(total);
+	ptr = (void *)malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, total);
+	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }
 /*
 int main()
 {
-	size_t	i;
-	size_t	size = 5;
-	char *str = ft_calloc(6, sizeof(char));
-	int *array = ft_calloc(size, sizeof(int));
-	
-    // Test Compare with real calloc
-    printf("\n=== Test: Compare with real calloc ===\n");
-    void *real_ptr = calloc(3, 8);
-    void *ft_ptr = ft_calloc(3, 8);
-
-    printf("real calloc: %p\n", real_ptr);
-    printf("ft_calloc : %p\n", ft_ptr);
-
-    if (real_ptr && ft_ptr) {
-        int diff = ft_memcmp(real_ptr, ft_ptr, 24);
-        printf("Memory content comparison: %s\n", 
-		diff == 0 ? "IDENTICAL" : "DIFFERENT");
-    }
-	printf("String: %p\n", str);
-	i = 0;
-	while (i < size)
+	int	n = 10;
+	int *array = ft_calloc(n, sizeof(n));
+	if (array == NULL)
+		return(printf("memory allocation failled"));
+	int i = 0;
+	printf("Array elements after calloc: ");
+	while (i < n)
 	{
-		printf("Array[%zu] = %d\n", i, array[i]);
-		array[i] = i * 5;
+		printf("%d ", array[i]);
 		i++;
 	}
-
-	i = 0;
-	while (i < size)
-	{
-		printf("Array[%zu] = %d\n", i, array[i]);
-		i++;
-	}
+	printf("\n");
 	free(array);
-
-	array = ft_calloc(size, sizeof(int));
-	i = 0;
-	while (i < size)
-	{
-		printf("Array[%zu] = %d\n", i, array[i]);
-		i++;
-	}
-    printf("\nAll tests completed.\n");
-
-    free(real_ptr);
-    free(ft_ptr);
-    free(array);
-    free(str);
+	return (0);
 }
 */

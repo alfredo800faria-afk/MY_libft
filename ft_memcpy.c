@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:11:13 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:11:16 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 14:08:05 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,19 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 /*
-#include <stdio.h>
 int main(void)
 {
 	char str[] = "Hello World";
-	unsigned long nbr = 3;
-	char dest[8] = "Marvin";
+	char str1[] = "Marvin";
+	char buff[12];
+	
+	printf("ft_memcpy: %s\n", (char *)ft_memcpy(buff, str, 11));
+    printf("memcpy: %s\n\n", (char *)memcpy(buff, str, 11));
 
-	printf("String: %s \n", str);
-	printf("Copying %lu spots\n", nbr);
-	printf("to destination string: %s \n",dest);
-	ft_memcpy(dest, str, nbr);
-	printf("Output: %s", dest);
+	printf("ft_memcpy: %s\n", (char *)ft_memcpy(buff, str1, 7));
+    printf("memcpy: %s\n\n", (char *)memcpy(buff, str1, 7));
+
+	printf("ft_memcpy: %s\n", (char *)ft_memcpy(str, str1, 3));
+    printf("memcpy: %s\n\n", (char *)memcpy(str, str1, 3));
 }
 */

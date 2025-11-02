@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:05:15 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/29 05:16:36 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:40:38 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,20 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+/*
+int	main(void)
+{
+	char str[10] = "Marvin";
+	char	s[] = "Marvin Paranoid";
+	unsigned long nb = 6;
+	printf("Using: ft_bzero(str + 3, 5)\n");
+	printf("Original string: %s \n", str);
+	ft_bzero(str + 3, 5);
+	printf("After ft_bzero: '%s'\n", str);
+	printf("String: %s \n Filling %lu spots with NULL '0' \n", s, nb);
+	ft_bzero(s + 5, nb);
+	printf("Output: %s\n", s);
+
+	return (0);
+}
+*/

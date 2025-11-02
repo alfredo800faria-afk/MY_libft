@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:11:31 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/27 11:42:35 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 15:20:18 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 /*
-#include <stdio.h>
 int main(void)
 {
 	char str[] = "Hello World";
-	unsigned long nb = 3;
-	char dest[8] = "Marvin";
+	char dest[] = "Marvin";
 
-	printf("String: %s \n", str);
-	printf("Copying %lu spots\n",nb);
-	printf("to destination string: %s\n",dest);
-	ft_memmove(dest, str, nb);
-	printf("Output: %s", dest);
+	ft_memmove(str + 5, dest, 6);
+	printf("ft_memmove: %s \n", str);
+	ft_memmove(dest + 3, str + 3, 2);
+	printf("ft_memmove: %s\n",dest);
 }
 */

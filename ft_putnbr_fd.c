@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lis.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:47:25 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/27 18:26:28 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 17:01:09 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
@@ -28,3 +30,15 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd('0' + (n % 10), fd);
 }
+/*
+int	main(void)
+{
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putendl_fd("\n", 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-42, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
+*/

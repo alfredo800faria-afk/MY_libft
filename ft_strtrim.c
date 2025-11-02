@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 16:44:53 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 16:56:56 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 15:35:08 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = end - start;
 	return (ft_substr(s1, (unsigned int)start, len));
 }
+/*
+int	main(void)
+{
+	char *s;
+
+	s = ft_strtrim("Android Marvin!", "in!");
+	printf("ft_strtrim: %s\n", s);
+	free (s);
+	s = ft_strtrim("\\tMarvin Paranoid\\t", "\\t");
+	printf("ft_strtrim: %s\n", s);
+	free (s);
+	s = ft_strtrim("...Android..Paranoid..", "..");
+	printf("ft_strtrim: %s\n", s);
+	free (s);
+	s = ft_strtrim("Marvin", NULL);
+	printf("ft_strtrim: %s\n", s);
+	free (s);
+	s = ft_strtrim(NULL, "Marvin");
+	printf("ft_strtrim: %s\n", s);
+	free (s);
+
+	return (0);
+}
+*/

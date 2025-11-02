@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:27:10 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 12:09:24 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 18:38:02 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,19 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
+/*
+int	main(void)
+{
+	char	*s = "Android!";
+	char	*s1 = "Marvin Android!";
+	char	*s2;
+
+	s2 = ft_strdup(s1);
+	s = strdup(s1);
+	printf("Original strdup: %s\nMy ft_strdup: %s\n", s, s2);
+	free(s2);
+	free(s);
+
+	return (0);
+}
+*/

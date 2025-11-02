@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 16:07:36 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 16:35:21 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:54:52 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,19 @@ char	*ft_itoa(int n)
 	fill_str(res, nb, len, neg);
 	return (res);
 }
+/*
+int main (void)
+{
+	int	s[5] =
+	{
+		-123456, -2147483648, 2147483647, 42, 0 
+	};
+	printf("Number [ %d ] : %s\n", s[0], ft_itoa(s[0]));
+	printf("Number [ %d ] : %s\n", s[1], ft_itoa(s[1]));
+	printf("Number [ %d ] : %s\n", s[2], ft_itoa(s[2]));
+	printf("Number [ %d ] 		: %s\n", s[3], ft_itoa(s[3]));
+	printf("Number [ %d ] 		: %s\n", s[4], ft_itoa(s[4]));
+
+	return (0);
+}
+*/

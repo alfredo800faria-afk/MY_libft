@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:10:48 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:10:50 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:44:32 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,25 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 /*
-int main()
+int main(void)
 {
-	char str_a[] = "Hello World";
-	char str_b[] = "Hey World";
-	int i = 5;
+	char *s[] = { "Marvin", "Hey Marvin",""};
 
-	printf("Comparing first %d  \n", i);
-	printf("characters of the strings '%s'\n", str_a);
-	printf("and '%s'\n", str_a);
-	printf("Output: %d\n\n", ft_memcmp(str_a, str_a, 5));
-	printf("Comparing first %d  \n", i);
-	printf("characters of the strings '%s'\n", str_a);
-	printf("and '%s'\n", str_b);
-	printf("Output: %d\n", ft_memcmp(str_a, str_b, 5));
+	printf("ft_memcmp: %d\n", ft_memcmp(s[0], s[0], 6));
+    printf("memcmp: %d\n\n", ft_memcmp(s[0], s[0], 6));
+
+	printf("ft_memcmp: %d\n", ft_memcmp(s[0] + 3, s[1] + 7, 4));
+	printf("memcmp: %d\n\n", ft_memcmp(s[0] + 3, s[1] + 7, 4));
+
+	printf("ft_memcmp: %d\n", ft_memcmp(s[0], s[1], 11));
+	printf("memcmp: %d\n\n", ft_memcmp(s[0], s[1], 11));
+
+	printf("ft_memcmp: %d\n", ft_memcmp(s[1], s[1], 0));
+	printf("memcmp: %d\n\n", ft_memcmp(s[1], s[1], 0));
+
+	printf("ft_memcmp: %d\n", ft_memcmp(s[2], s[2], 1));
+	printf("memcmp: %d\n", ft_memcmp(s[2], s[2], 1));
+
+	return (0);
 }
 */
