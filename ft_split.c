@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lis.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:02:01 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/29 03:52:36 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/03 08:35:04 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,3 +86,24 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
+/*
+int	main(void)
+{
+	char	*str			= " Marvin, Android, Paranoid!";
+	char	ch				= ',';
+	char	**split_word	= ft_split(str, ch);
+	int		i				= 0;
+
+	if(split_word)
+	{
+	while (split_word[i])
+	{
+		printf("%s\n", split_word[i]);
+		free(split_word[i]);
+		i++;
+	}
+	free(split_word);
+	}
+	return (0);
+}
+*/

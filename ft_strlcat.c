@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:12:40 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/10/26 15:12:43 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/03 09:06:55 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,16 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (dest_len + src_len);
 }
 /*
-#include <stdio.h>
-int main()
+int main(void)
 {
-	char str[] = "Hello World";
-	unsigned long nb = 12;
-	char dest[8] = "Marvin";
+	char str[] = "Marvin Android-";
+	char str1[] = "Paranoid";
+	size_t	len = ft_strlen(str) + ft_strlen(str1) + 1;
 
-	printf("String: %s \n", str);
-	printf("Copying %lu spots ",nb);
-	printf("to destination string: %s \n",dest);
-	ft_strlcat(dest, str, nb);
-	printf("Output: %s\n", dest);
+	printf("Str 1: %s\nStr 2: %s\n", str, str1);
+	printf("Lenght: %zu\n",ft_strlcat(str, str1, len));
+	printf("String Concat: %s\n", str);
+
+	return (0);
 }
 */

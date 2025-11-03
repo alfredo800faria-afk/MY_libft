@@ -6,9 +6,15 @@
 /*   By: srusso-b <srusso-b@student.42lis.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:35:41 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/11/02 18:13:16 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:45:04 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Escreva um programa, que receba 2 argumentos,
+ * arg1 - o arquivo a ser criado e escrito
+ * arg2 - a string a ser escrita 
+ * */
 
 #include "libft.h"
 
@@ -20,11 +26,18 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, s++, 1);
 }
 /*
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	char	*s = "Marvin Paranoid!\n";
-	
-	ft_putstr_fd(s, 1);
+	if (argc > 1)
+	{
+		//char	*s = "Marvin Paranoid!\n";
+		int fd;
+		fd = open(argv[1], O_CREAT | O_RDWR, 0644);
+		printf("Return open: %i\n", fd);
+		ft_putstr_fd(argv[2], fd);
+		close(fd);
+
+	}
 
 	return (0);
 }

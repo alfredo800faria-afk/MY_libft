@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 16:07:36 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/11/01 17:54:52 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/03 08:19:22 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,63 +14,46 @@
 
 /* Convert an int integer to an allocated string */
 
-static size_t	count_digits(long n)
+static int	get_size(int n)
 {
-	size_t	count;
+	int	size;
 
-	count = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		count++;
-		n = -n;
-	}
+	size = 0;
+	if (n <= 0)
+		size++;
 	while (n > 0)
 	{
 		n = n / 10;
-		count++;
+		size++;
 	}
-	return (count);
-}
-
-static void	fill_str(char *str, long nb, size_t len, int neg)
-{
-	str[len] = '\0';
-	if (neg)
-		str[0] = '-';
-	if (nb == 0)
-		str[0] = '0';
-	while (nb > 0)
-	{
-		len--;
-		str[len] = (nb % 10) + '0';
-		nb = nb / 10;
-	}
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*res;
-	size_t	len;
+	int		size;
+	char	*str;
 	long	nb;
-	int		neg;
 
+	size = get_size(n);
+	str = malloc(sizeof(char) * (size + 1));
 	nb = n;
-	neg = 0;
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	if (nb == 0)
+		str[0] = '0';
 	if (nb < 0)
 	{
-		neg = 1;
+		str[0] = '-';
 		nb = -nb;
 	}
-	len = count_digits(nb);
-	if (neg)
-		len++;
-	res = (char *)malloc(sizeof(char) * len + 1);
-	if (res == NULL)
-		return (NULL);
-	fill_str(res, nb, len, neg);
-	return (res);
+	while (nb > 0)
+	{
+		str[--size] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	return (str);
 }
 /*
 int main (void)
