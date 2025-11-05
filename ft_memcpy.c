@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:11:13 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/11/02 14:08:05 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/05 19:38:58 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*tmp_src;
 	unsigned char	*tmp_dest;
 
-	i = 0;
-	if (!dest && !src)
+	if (!dest || !src)
 		return (dest);
 	tmp_src = (unsigned char *)src;
 	tmp_dest = (unsigned char *)dest;
+	i = 0;
 	while (i < n)
 	{
 		tmp_dest[i] = tmp_src[i];
@@ -47,7 +47,7 @@ int main(void)
 	printf("ft_memcpy: %s\n", (char *)ft_memcpy(buff, str1, 7));
     printf("memcpy: %s\n\n", (char *)memcpy(buff, str1, 7));
 
-	printf("ft_memcpy: %s\n", (char *)ft_memcpy(str, str1, 3));
+	printf("ft_memcpy: %s\n", (char *)ft_memcpy(str, NULL, 3));
     printf("memcpy: %s\n\n", (char *)memcpy(str, str1, 3));
 }
 */

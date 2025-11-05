@@ -6,7 +6,7 @@
 #    By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 14:19:42 by srusso-b          #+#    #+#              #
-#    Updated: 2025/11/01 16:01:58 by srusso-b         ###   ########.fr        #
+#    Updated: 2025/11/04 20:36:16 by srusso-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,24 +40,23 @@ HEADER				= 	libft.h
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@ar rcs $(NAME) $(OBJECTS)
-	@echo "Compilation of "$@" complete!"
-
-%.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	ar rcs $(NAME) $(OBJECTS)
 
 bonus: $(OBJECTS) $(OBJECTS_BONUS)
-	@ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
-	@echo "Compilation BONUS complete!"
+	ar rcs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	@touch bonus
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJECTS) $(OBJECTS_BONUS)
-	@echo "Libft cleaning object files!"
+	rm -rf $(OBJECTS) $(OBJECTS_BONUS)
+	@touch bonus
+	@rm bonus
 
 fclean: clean 
-	@rm -rf $(NAME)
-	@echo "Libft Deleted!"
+	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

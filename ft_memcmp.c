@@ -6,7 +6,7 @@
 /*   By: srusso-b <srusso-b@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 15:10:48 by srusso-b          #+#    #+#             */
-/*   Updated: 2025/11/02 13:44:32 by srusso-b         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:55:58 by srusso-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if ((unsigned char) str1[i] != (unsigned char) str2[i])
-			return ((unsigned char) str1[i] - (unsigned char) str2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	return (0);
